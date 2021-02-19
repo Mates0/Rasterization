@@ -53,54 +53,31 @@ public class ScreenManager {
             double b3 = cord2y - a3 * cord2x;
 
             if (cord2y > a * cord2y + b) {
-                if (coordinate.getY() > a * coordinate.getX() + b)
-                    first = true;
-                else
-                    first = false;
+                first = coordinate.getY() > a * coordinate.getX() + b;
             }
 
             if (cord2y < a * cord2y + b) {
-                if (coordinate.getY() < a * coordinate.getX() + b)
-                    first = true;
-                else
-                    first = false;
+                first = coordinate.getY() < a * coordinate.getX() + b;
             }
 
             if (cord0y > a2 * cord0y + b2) {
-                if (coordinate.getY() > a2 * coordinate.getX() + b2)
-                    second = true;
-                else
-                    second = false;
+                second = coordinate.getY() > a2 * coordinate.getX() + b2;
             }
 
             if (cord0y < a2 * cord0y + b2) {
-                if (coordinate.getY() < a2 * coordinate.getX() + b2)
-                    second = true;
-                else
-                    second = false;
+                second = coordinate.getY() < a2 * coordinate.getX() + b2;
             }
 
             if (cord1y > a3 * cord1x + b3) {
-                if (coordinate.getY() > a3 * coordinate.getX() + b3) {
-                    third = true;
-                } else {
-                    third = false;
-                }
+                third = coordinate.getY() > a3 * coordinate.getX() + b3;
             }
 
             if (cord1y < a3 * cord1x + b3) {
-                if (coordinate.getY() < a3 + coordinate.getX() + b3) {
-                    third = true;
-                } else {
-                    third = false;
-                }
+                third = coordinate.getY() < a3 + coordinate.getX() + b3;
             }
-            if (first && second && third) {
-                return true;
-            }
+            return first && second && third;
         } else {
             return false;
         }
-        return false;
     }
 }
